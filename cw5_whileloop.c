@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main() {
-	int numCustomer, i=0, unit;
+	int numCustomer, i=1, unit;
 	float currentBill = 0, avgBill=0, highestBill=0, lowestBill=0, totalBill = 0;
 	printf("Enter number of customer: ");
 	scanf("%d", &numCustomer);
 	
-	while (i <numCustomer) {
-		i++
+	while (i <= numCustomer) {
 		currentBill = 0;
 		printf("Enter the number of electricity units consumed: ");
 		scanf("%d", &unit);
@@ -39,14 +38,17 @@ int main() {
 		if (highestBill < currentBill) {
 			highestBill = currentBill;
 		}
-		if (lowestBill > currentBill && lowestBill > 0) {
+		if (i==1) {
+			lowestBill = currentBill;
+		}
+		if (lowestBill > currentBill) {
 			lowestBill = currentBill;
 		}
 		totalBill+=currentBill;
+		i++;
 	}
 	avgBill = totalBill/numCustomer;
 	printf("Average bill amount: %.2f \n", avgBill);
-
 	printf("Highest bill amount: %.2f \n", highestBill);
 	printf("Lowest bill amount: %.2f \n", lowestBill);
 }

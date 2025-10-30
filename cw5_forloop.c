@@ -38,14 +38,16 @@ int main() {
 		if (highestBill < currentBill) {
 			highestBill = currentBill;
 		}
-		if (lowestBill > currentBill && lowestBill > 0) {
+		if (i==1) {
+			lowestBill = currentBill;
+		}
+		if (lowestBill > currentBill) {
 			lowestBill = currentBill;
 		}
 		totalBill+=currentBill;
 	}
 	avgBill = totalBill/numCustomer;
 	printf("Average bill amount: %.2f \n", avgBill);
-
 	printf("Highest bill amount: %.2f \n", highestBill);
 	printf("Lowest bill amount: %.2f \n", lowestBill);
 }
